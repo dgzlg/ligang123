@@ -1,1 +1,70 @@
 leaflet 地图集
+
+syu@SYU-PC MINGW64 /d/myligang/ligang1129map
+$ git init
+Initialized empty Git repository in D:/myligang/ligang1129map/.git/
+
+syu@SYU-PC MINGW64 /d/myligang/ligang1129map (master)
+$ git remote add origin https://github.com/dgzlg/ligang123.git
+
+syu@SYU-PC MINGW64 /d/myligang/ligang1129map (master)
+$ git add .
+
+syu@SYU-PC MINGW64 /d/myligang/ligang1129map (master)
+$ git commit -m 'leaflet地图演示'
+[master (root-commit) 784bbab] leaflet地图演示
+ 1 file changed, 72 insertions(+)
+ create mode 100644 index.html
+
+syu@SYU-PC MINGW64 /d/myligang/ligang1129map (master)
+$ git push -u origin master
+Counting objects: 3, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 1.28 KiB | 1.28 MiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/dgzlg/ligang123.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+syu@SYU-PC MINGW64 /d/myligang/ligang1129map (master)
+$ git add .
+
+syu@SYU-PC MINGW64 /d/myligang/ligang1129map (master)
+$ git commit -m '新添加了txt'
+[master e64d4cc] 新添加了txt
+ 1 file changed, 1 insertion(+)
+ create mode 100644 "\346\226\260\345\273\272\346\226\207\346\234\254\346\226\207\346\241\243.txt"
+
+syu@SYU-PC MINGW64 /d/myligang/ligang1129map (master)
+$ git push
+Counting objects: 3, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 316 bytes | 316.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/dgzlg/ligang123.git
+   784bbab..e64d4cc  master -> master
+
+//在本地创建dev分支
+syu@SYU-PC MINGW64 /d/myligang/ligang1129map (master)
+$ git checkout -b dev
+Switched to a new branch 'dev'
+
+//这条命令表示把本地dev分支提交到远程仓库，即创建了远程分支dev
+syu@SYU-PC MINGW64 /d/myligang/ligang1129map (dev)
+$ git push origin dev
+Total 0 (delta 0), reused 0 (delta 0)
+remote:
+remote: Create a pull request for 'dev' on GitHub by visiting:
+remote:      https://github.com/dgzlg/ligang123/pull/new/dev
+remote:
+To https://github.com/dgzlg/ligang123.git
+ * [new branch]      dev -> dev
+
+syu@SYU-PC MINGW64 /d/myligang/ligang1129map (dev)
+$ git remote -v
+origin  https://github.com/dgzlg/ligang123.git (fetch)
+origin  https://github.com/dgzlg/ligang123.git (push)
+
+syu@SYU-PC MINGW64 /d/myligang/ligang1129map (dev)
