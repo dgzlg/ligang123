@@ -67,4 +67,3 @@ $ git remote -v
 origin  https://github.com/dgzlg/ligang123.git (fetch)
 origin  https://github.com/dgzlg/ligang123.git (push)
 
-syu@SYU-PC MINGW64 /d/myligang/ligang1129map (dev)
