@@ -1,0 +1,34 @@
+div.modal-resource-edit{
+  div.ant-modal-body{
+    position: relative;
+  }
+  div.box-step-state{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 136px 24px 0;
+    &:before{
+      display: block;
+      content: '';
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: #fff;
+      opacity: 0.9;
+    }
+    &.show{
+      display: block;
+    }
+    div.description{
+      position: relative;
+      margin-top: 24px;
+      font-size: 14px;
+      text-align: center;
+    }
+  }
+}

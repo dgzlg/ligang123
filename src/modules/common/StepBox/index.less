@@ -1,0 +1,32 @@
+div.step-box{
+  display: flex;
+  justify-content: space-between;
+  div.ant-steps{
+    &-item{
+      border-left: 4px solid #fff;
+      cursor: pointer;
+      &:hover{
+        border-color: #f2f2f2;
+        background-color: #f2f2f2;
+      }
+    }
+  }
+  div.step-bars{
+    flex: none;
+    margin-right: 24px;
+    border-right: 1px solid #f2f2f2;
+  }
+  div.view-box{
+    overflow: hidden;
+  }
+  div.step-items{
+    display: flex;
+  }
+  div.step-item{
+    flex: 1;
+    order: 1;
+    &.active{
+      order: 0;
+    }
+  }
+}

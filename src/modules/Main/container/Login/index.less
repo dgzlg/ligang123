@@ -1,0 +1,91 @@
+@import '../global';
+
+div#app-login{
+  position: fixed;
+  z-index: 1071;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  div.block-left,
+  div.block-right{
+    position: absolute;
+    top: 0;
+    height: 100%;
+    overflow: hidden;
+  }
+  div.block-left{
+    left: 0;
+    width: 50%;
+    background-color: @primary-color;
+  }
+  div.block-right{
+    right: 0;
+    width: 50%;
+    padding-top: 224px;
+    .copy-right{
+      position: absolute;
+      width: 100%;
+      bottom: 32px;
+      text-align: center;
+      font-size: 12px;
+      color: @font-grey-color;
+    }
+    @media (max-width: 1440px) {
+      padding-top: 120px;
+    }
+    @media (max-width: 1366px) {
+      padding-top: 40px;
+    }
+  }
+  div.app-logo{
+    @height: 72px;
+    text-align: center;
+    img{
+      height: @height;
+      vertical-align: middle;
+    }
+  }
+  div.app-name{
+    margin-top: 12px;
+    text-align: center;
+    font-size: 28px;
+    line-height: 1;
+    font-weight: bold;
+    color: @font-primary-color;
+  }
+  div.welcome{
+    margin-top: 24px;
+    text-align: center;
+    font-size: 18px;
+  }
+  div.login-form{
+    width: 320px;
+    margin-top: 48px;
+    margin-left: auto;
+    margin-right: auto;
+    input{
+      height: 48px;
+      background-color: #f1f1f1;
+      border: none;
+    }
+    .ant-form-item{
+      margin-bottom: 40px;
+    }
+    .ant-form-item-control{
+      line-height: 48px;
+    }
+  }
+  .btn-login{
+    height: 48px;
+    color: #fff;
+    background-color: @primary-color;
+    &:hover{
+      background-color: lighten(@primary-color, 10%);
+    }
+  }
+  .ant-form-explain-holder{
+    line-height: 1;
+  }
+}

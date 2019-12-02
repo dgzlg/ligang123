@@ -1,0 +1,67 @@
+@import "../../Main/container/global.less";
+div.my-item-collector{
+  position: relative;
+  border: 1px dashed @dashed-line-color;
+  border-radius: @border-radius-base;
+  div.collector-item{
+    @height: 104px;
+    @width: 104px;
+    @iconSize: 64px;
+    position: relative;
+    float: left;
+    width: @width;
+    height: @height;
+    padding: 4px;
+    border-radius: @border-radius-base;
+    &:hover{
+      background-color: #f1f1f1;
+      .name{
+        position: absolute;
+        top: @iconSize + 4px;
+        left: 0;
+        z-index: 10;
+        width: 100%;
+        height: auto;
+        padding-bottom: 4px;
+        border-radius: @border-radius-base;
+        text-overflow: inherit;
+        overflow: inherit;
+        white-space: inherit;
+        background-color: #f1f1f1;
+      }
+    }
+    .icon{
+      @size: @iconSize;
+      width: @size;
+      height: @size;
+      margin-left: auto;
+      margin-right: auto;
+      background-image: url("../../../public/images/icons-resource.png");
+      background-repeat: no-repeat;
+      &.back{
+        background-position: 0 0;
+      }
+      &.directory{
+        background-position: -1*@size 0;
+      }
+      &.file{
+        background-position: -3*@size 0;
+      }
+      &.api{
+        background-position: -5*@size 0;
+      }
+      &.map{
+        background-position: -7*@size 0;
+      }
+    }
+    .name{
+      cursor: default;
+      text-align: center;
+      font-size: 14px;
+      height: 24px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+}

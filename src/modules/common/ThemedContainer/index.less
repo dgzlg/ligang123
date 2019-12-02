@@ -1,0 +1,42 @@
+@import "../../Main/container/global.less";
+
+div.themed-container{
+  @headerHeight: 48px;
+  width: 100%;
+  padding-left: 24px;
+  padding-right: 24px;
+  background-color: #fff;
+  border-radius: @border-radius-base;
+  header{
+    position: relative;
+    line-height: @headerHeight;
+    border-bottom: 1px dashed @dashed-line-color;
+    div.title{
+      text-align: center;
+      font-size: 16px;
+      font-weight: bold;
+      color: @font-primary-color;
+    }
+    div.left{
+      position: absolute;
+      top: 0;
+      left: 0;
+      font-size: 14px;
+      color: @font-primary-color;
+    }
+    div.right{
+      position: absolute;
+      top: 0;
+      right: 0;
+      font-size: 14px;
+      color: @primary-color;
+      cursor: pointer;
+    }
+  }
+  main{
+    padding-top: 24px;
+  }
+  footer{
+    border-top: 1px dashed @dashed-line-color;
+  }
+}

@@ -1,0 +1,362 @@
+@import "global";
+/* header height */
+@header-height: 64px;
+/* footer height */
+@footer-height: 48px;
+
+
+::-webkit-scrollbar-thumb {
+  background-color: #e6e6e6;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.mark-color{
+  &-blue{
+    color: @primary-color;
+  }
+  &-green{
+    color: @success-color;
+  }
+  &-orange{
+    color: @warning-color;
+  }
+  &-red{
+    color: @error-color;
+  }
+  &-grey{
+    color: #aaa;
+  }
+}
+
+body{
+  overflow: hidden;
+}
+
+/* ant-modal */
+div.ant-modal-content{
+  div.ant-input-number{
+    width: 100%;
+  }
+}
+
+div#app{
+  height: 100%;
+}
+
+/* 主框 */
+div#app-main{
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  color: @font-primary-color;
+}
+
+/* loading */
+div#app-loading{
+  position: fixed;
+  z-index: 1070;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  >div.ant-spin{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    margin-top: -16px;
+  }
+}
+
+/* sider */
+#mainSider{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  height: 100%;
+  background-color: @primary-color;
+}
+
+#mainLogo{
+  padding-top: 18px;
+  text-align: center;
+  cursor: pointer;
+  img{
+    width: 80px;
+  }
+  .name{
+    margin-top: 16px;
+    line-height: 1;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+  }
+}
+
+#mainMenu{
+  @itemHeight: 48px;
+  @itemPDLeft: 40px;
+  @iconSize: 16px;
+  margin-top: 64px;
+  border: none;
+  background-color: transparent;
+  color: #fff;
+  > li{
+    height: @itemHeight;
+    line-height: @itemHeight;
+    margin: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: @itemPDLeft;
+    &.ant-menu{
+      &-submenu{
+        .ant-menu-submenu-title{
+          height: @itemHeight;
+          margin: 0;
+          padding: 0;
+          line-height: inherit;
+          color: inherit;
+        }
+        &-selected{
+          color: inherit;
+          .ant-menu-submenu-title{
+            border-right: 2px solid #fff;
+          }
+        }
+        &-active{
+          color: inherit;
+          background-color: lighten(@primary-color, 20%, relative);
+        }
+      }
+      &-item{
+        &-selected{
+          color: inherit;
+          border-right: 2px solid #fff;
+        }
+        &-active{
+          color: inherit;
+          background-color: lighten(@primary-color, 20%, relative);
+        }
+      }
+    }
+  }
+  .ant-menu-submenu-arrow{
+    display: none;
+  }
+  span.icon,
+  span.name{
+    display: inline-block;
+    vertical-align: middle;
+  }
+  span.icon{
+    width: @iconSize;
+    height: @iconSize;
+    background-repeat: no-repeat;
+    background-image: url("../../../public/images/icons-menu.png");
+    background-size: auto @iconSize;
+  }
+  span.name{
+    height: @iconSize;
+    margin-left: 8px;
+    line-height: @iconSize;
+    font-size: 14px;
+  }
+  @iconWidth: 16px;
+  span.icon-system{
+    background-position: 0 0;
+  }
+  span.icon-menu{
+    background-position: -@iconWidth 0;
+  }
+  span.icon-source{
+    background-position: -@iconWidth*2 0;
+  }
+  span.icon-demand{
+    background-position: -@iconWidth*3 0;
+  }
+  span.icon-task{
+    background-position: -@iconWidth*4 0;
+  }
+}
+.ant-menu{
+  .main-menu{
+    &.ant-menu-item-selected{
+      background-color: transparent;
+    }
+  }
+}
+
+#mainContent{
+  position: absolute;
+  top: 0;
+  z-index: 0;
+  height: 100%;
+  background-color: #f2f2f2;
+  .scroll-box{
+    height: 100%;
+    padding-top: @header-height;
+    overflow-y: scroll;
+  }
+}
+
+#app-content{
+  width: 100%;
+}
+
+/* 主框顶部 */
+#appHeader{
+  @contentHeight: 16px;
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: @header-height;
+  padding-left: 16px;
+  padding-right: 16px;
+  background-color: #fff;
+  border-bottom: 1px solid #c7d0d9;
+  .clear-fix;
+  .app-page-title{
+    position: relative;
+    float: left;
+    padding-left: 24px;
+    line-height: @header-height;
+    font-size: 16px;
+    color: darken(@font-primary-color, 40%, relative);
+    @rectSize: 8px;
+    .rect-1,
+    .rect-2{
+      position: absolute;
+      display: block;
+      width: @rectSize;
+      height: @rectSize;
+    }
+    .rect-1{
+      left: 0;
+      top: @header-height / 2 - 2 - @rectSize / 2;
+      background-color: @primary-color;
+    }
+    .rect-2{
+      left: 4px;
+      top: @header-height / 2 + 2 - @rectSize / 2;
+      background-color: @primary-color;
+      opacity: 0.5;
+    }
+  }
+  .app-message{
+    position: relative;
+    font-size: 16px;
+    float: right;
+    margin-right: 32px;
+    line-height: @header-height;
+    cursor: pointer;
+    &:hover{
+      .anticon{
+        color: @primary-color;
+      }
+    }
+    .anticon{
+      width: @contentHeight;
+      height: @contentHeight;
+    }
+    .num{
+      @height: 12px;
+      position: absolute;
+      top: @header-height / 2 - @height;
+      right: -6px;
+      width: @height;
+      height: @height;
+      border-radius: @height / 2;
+      text-align: center;
+      line-height: @height;
+      font-size: 12px;
+      background-color: @primary-color;
+      color: #fff;
+    }
+  }
+  .app-user{
+    float: right;
+    height: @header-height;
+    line-height: @header-height;
+    cursor: pointer;
+    .anticon{
+      font-size: 16px;
+      margin-right: 6px;
+    }
+    .name{
+      font-size: 16px;
+    }
+  }
+}
+div.header-user-pop{
+  > div{
+    padding-left: 8px;
+    padding-right: 8px;
+    font-size: 14px;
+    line-height: 16px;
+    margin-top: 8px;
+    cursor: pointer;
+    &:hover{
+      color: @primary-color;
+    }
+  }
+  > div:first-child{
+    margin-top: 0;
+  }
+}
+
+/* 表格筛选栏 */
+div.operation-container {
+  .clear-fix;
+  >div.operation-item{
+    float: left;
+    margin-right: 24px;
+    margin-bottom: 16px;
+    &:last-child{
+      margin-right: 0;
+    }
+    .title{
+      display: inline-block;
+      margin-right: 8px;
+    }
+    input.input-single{
+      max-width: 90px;
+    }
+  }
+  .range-input{
+    @width: 240px;
+    @widthMiddle: 24px;
+    display: inline-block;
+    width: @width;
+    &-left, &-middle, &-right{
+      display: inline-block;
+    }
+    &-left{
+      width: (@width - @widthMiddle) / 2;
+    }
+    &-middle{
+      width: @widthMiddle;
+      text-align: center;
+    }
+    &-right{
+      width: (@width - @widthMiddle) / 2;
+    }
+  }
+}
+
+/* footer */
+div#app-footer{
+  width: 100%;
+  height: @footer-height;
+  font-size: 14px;
+  line-height: @footer-height;
+  color: #aaa;
+  text-align: center;
+}

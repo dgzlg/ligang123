@@ -1,0 +1,27 @@
+@import "../../../Main/container/global.less";
+div.file-selector{
+  @height: 32px;
+  position: relative;
+  height: @height;
+  div.select{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding-left: 11px;
+    line-height: @height;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    user-select: none;
+    &:hover{
+      border-color: @primary-color;
+    }
+  }
+  input.input{
+    width: 0;
+    height: 0;
+    line-height: 0;
+    visibility: hidden;
+  }
+}
